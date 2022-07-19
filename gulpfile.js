@@ -3,9 +3,9 @@ const sass = require("gulp-sass")(require("sass"));
 const purgecss = require("gulp-purgecss");
 
 function buildStyles() {
+    // .pipe(purgecss({ content: ["*.html"] })) 
     return src("colorful/**/*.scss")
         .pipe(sass())
-        .pipe(purgecss({ content: ["*.html"] })) //remove unneccssary css
         .pipe(dest("css"));
 }
 
